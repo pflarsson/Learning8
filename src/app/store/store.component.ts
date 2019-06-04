@@ -10,7 +10,7 @@ import { Add, CountState } from './store.state';
     <button (click)="onClick()">Click Me</button>
   `
 })
-export class AppComponent  {
+export class StoreComponent  {
 
   @Select(CountState) count$: Observable<number>;
 
