@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Store, Select } from '@ngxs/store';
 import { Observable } from 'rxjs';
-import { Add, CountState } from './app.state';
+import { Add, CountState } from './store.state';
 
 @Component({
   selector: 'app-store',
