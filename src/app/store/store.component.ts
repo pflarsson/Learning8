@@ -1,15 +1,24 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { Store, Select } from '@ngxs/store';
+import { Observable } from 'rxjs';
+import { Add, CountState } from './app.state';
 
 @Component({
   selector: 'app-store',
-  templateUrl: './store.component.html',
-  styleUrls: ['./store.component.scss']
+  template: `
+    <h1>Count is {{count$ | async}}</h1>
+    <button (click)="onClick()">Click Me</button>
+  `
 })
-export class StoreComponent implements OnInit {
+export class AppComponent  {
 
-  constructor() { }
+  @Select(CountState) count$: Observable<number>;
 
-  ngOnInit() {
+  constructor(private store: Store) {}
+
+  onClick() {
+    this.store.dispatch(new Add());
+
   }
 
 }
