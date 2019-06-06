@@ -11,9 +11,9 @@ import { Add, CountState } from './store.state';
 })
 export class StoreComponent implements OnInit {
 
-  @Select(CountState) count$: Observable<number>;
+   @Select(CountState) count$: Observable<number>;
 
-  constructor(private store: Store) {}
+  constructor(public store: Store) {}
 
   onClick() {
     this.store.dispatch(new Add());

@@ -1,10 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { NgxsModule } from '@ngxs/store';
-import { Store, Select } from '@ngxs/store';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { StoreComponent } from './store/store.component';
+import { CountState } from '../../src/app/store/store.state';
 
 @NgModule({
   declarations: [
@@ -14,13 +14,16 @@ import { StoreComponent } from './store/store.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgxsModule
-
+    NgxsModule.forRoot([CountState])
   ],
   providers: [],
   bootstrap: [AppComponent],
-  exports: [
-    StoreComponent
- ]
+
 })
-export class AppModule { }
+
+export class AppModule {
+
+/* public newMethod() {
+  return NgxsModule.forRoot([CountState]);
+} */
+}
