@@ -14,6 +14,7 @@ import { CountState } from '../../src/app/store/store.state';
   imports: [
     BrowserModule,
     AppRoutingModule,
+ //   NgxsModule.forRoot([CountState]),
     NgxsModule.forRoot([CountState])
   ],
   providers: [],
